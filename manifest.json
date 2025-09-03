@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Zap-Clickbait? Zap it.",
+  "version": "4.3.2",
+  "default_locale": "en",
+  "description": "Say goodbye to clickbait, cringe, and endless Shorts. One click → Zap.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "dashboard.html",
+  "action": {
+    "default_title": "Zap Dashboard"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+
+  ]
+}

@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Zap Dashboard</title>
+<link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="brand"><span class=""></span><span id="brandName">Zap</span><span class="ver" id="versionLabel"></span></div>
+    <div class="controls">
+      <select id="lang" class="select"></select>
+      <button id="mode" class="switch" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <nav class="nav" id="nav">
+    <button class="tab active" data-tab="dash">Dashboard</button>
+    <button class="tab" data-tab="blocked">Blocked</button>
+    <button class="tab" data-tab="insights">Insights</button>
+    <button class="tab" data-tab="keywords">Keywords</button>
+    <button class="tab" data-tab="about">About</button>
+    <button class="tab" data-tab="license">License</button>
+    <button class="tab" data-tab="hire">Hire Me</button>
+    <button class="tab" data-tab="changelog">Changelog</button>
+    <button class="tab" data-tab="contactus">Contact</button>
+
+  </nav>
+
+  <main>
+    <section id="dash" class="section active">
+      <div class="grid">
+        <div class="card"><h3 id="t_today">Today's Zaps</h3><div class="kpi" id="kpi_today">0</div><div class="muted small" id="t_today_hint">Videos hidden today</div></div>
+        <div class="card"><h3 id="t_total">Total Zaps</h3><div class="kpi" id="kpi_total">0</div><div class="muted small" id="t_total_hint">All-time blocked</div></div>
+        <div class="card"><h3 id="t_recent">Recently Blocked</h3><div id="recent_list" class="small muted">No data yet</div></div>
+      </div>
+      <div class="card"><h3 id="t_trend">7-Day trend</h3><div class="canvas-wrap"><canvas id="trend" width="800" height="180"></canvas></div></div>
+      <div class="card tip">
+        <div class="row">
+          <div>
+            <h4>Demo Data</h4>
+            <p class="muted small">Add sample blocked items to test charts & tables (testing only).</p>
+          </div>
+          <button id="demo" class="btn ghost">Generate Demo Data</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="section">
+      <div class="card"><h3>Insights Chart</h3><div class="canvas-wrap"><canvas id="breakdown" width="800" height="180"></canvas></div></div>
+    </section>
+
+    <section id="blocked" class="section">
+      <div class="card">
+        <div class="row">
+          <h3>Blocked Videos</h3>
+          <div class="row right">
+            <input id="search" placeholder="Search title or ID" class="select" />
+            <button id="btnExport" class="btn ghost">Export JSON</button>
+            <button id="btnUnblockAll" class="btn danger">Unblock All</button>
+          </div>
+        </div>
+        <table class="table" id="blockedTable"><thead><tr><th>Title</th><th>Video ID</th><th>Date</th><th>Reason</th><th>Action</th></tr></thead><tbody></tbody></table>
+      </div>
+    </section>
+
+    <section id="keywords" class="section">
+      <div class="card">
+        <h3>Bad Keywords</h3>
+        <p class="muted small">One per line. Matching videos will auto-hide.</p>
+        <textarea id="kw" rows="8" class="textarea"></textarea>
+        <div class="row"><button id="saveKw" class="btn">Save Keywords</button></div>
+      </div>
+    </section>
+
+    <section id="hire" class="section">
+      <div class="card">
+        <h3>Hire Me — Graphic Designer</h3>
+        <p class="muted">Branding, UI/UX, icons & motion. Let's make your product standout.</p>
+        <div class="row">
+          <a class="btn" href="mailto:hiredipto@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://www.behance.net/diptodesign" target="_blank">Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+   <section id="about" class="section">
+  <div class="card">
+    <h3>About Zap</h3>
+    <p class="muted">
+      <strong>Zap</strong> is a Chrome extension that helps you take back control of YouTube by 
+      <span class="highlight">hiding distracting or unwanted videos</span> automatically.
+    </p>
+    <ul class="features-list">
+      <li>⚡ Block by <strong>keywords</strong>.</li>
+      <li>📊 Get <strong>insights</strong> with charts & daily stats.</li>
+      <li>🌍 Use Zap in <strong>12+ languages</strong>.</li>
+      <li>🌙 Switch between <strong>dark & light modes</strong>.</li>
+      <li>🛠 100% free, open, and customizable.</li>
+    </ul>
+    <p class="muted small">
+      Originally started in <strong>2025</strong> as a simple blocker, Zap has grown into a 
+      full-featured productivity tool used worldwide.
+    </p>
+    <div class="row">
+      <a href="https://github.com/diptodesign" target="_blank" class="btn ghost">🌐 Project Page</a>
+      <a href="mailto:hiredipto@gmail.com" class="btn">✉️ Contact</a>
+    </div>
+  </div>
+</section>
+
+
+    <section id="license" class="section">
+      <div class="card"><h3>License</h3><p class="muted small">Copyright © 2025 Zap by Dipto Design LLC.
+</br>
+</br>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+The Software is provided “as is”, without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose and noninfringement.
+
+In no event shall the authors or copyright holders be liable for any claim,
+damages or other liability, whether in an action of contract, tort or
+otherwise, arising from, out of or in connection with the Software or the use
+or other dealings in the Software.</p></div>
+    </section>
+
+<section id="contact" class="section">
+  <div class="card">
+    <h3>Contact & Feature Requests</h3>
+    <p class="muted">
+      Have feedback, found a bug, or want to suggest a new feature? We’d love to hear from you.
+    </p>
+    <form id="contactForm" class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" class="select" placeholder="Enter your name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" class="select" placeholder="Enter your email" required />
+
+      <label for="message">Message / Feature Request</label>
+      <textarea id="message" rows="5" class="textarea" placeholder="Type your message here..." required></textarea>
+
+      <div class="row">
+        <button type="submit" class="btn">Send</button>
+        <button type="reset" class="btn ghost">Clear</button>
+      </div>
+    </form>
+    <p class="muted small">Or email us directly at <a href="mailto:sayhidipto@gmail.com">sayhidipto@gmail.com</a></p>
+  </div>
+</section>
+
+
+   <section id="changelog" class="section">
+  <div class="card">
+    <h3>Changelog</h3>
+    <ul class="timeline">
+ <li><span class="badge new">NEW</span> <strong>v4.3.2</strong> — Stability fixes (background worker), safe storage calls, context error patches.</li></br>
+
+      <li><span class="badge improve">IMPROVED</span> <strong>v4.3.1</strong> — Multi-language support (11 languages), dark/light theme toggle, fully wired nav tabs, Insights charts, demo data generator.</li>
+</br>
+      <li><span class="badge improve">IMPROVED</span> <strong>v4.3.0</strong> — Redesigned dashboard with card layout, version label, stats, keywords manager.</li></br>
+
+
+      <li><span class="badge fix">FIXED</span> <strong>v4.2.x</strong> — Bug fixes on blocked videos page, export/unblock actions, added channel/keyword blocking, Insights per-day stats.</li>
+</br>
+      <li><span class="badge improve">IMPROVED</span> <strong>v4.1.x</strong> — Added navigation pages (Dashboard, Blocked, Insights, Hire Me, License, Changelog).</li>
+</br>
+
+      <li><span class="badge new">NEW</span> <strong>v4.0</strong> — Introduced popup-free Dashboard tab with charts and data visualization.</li>
+</br>
+
+      <li><span class="badge fix">FIXED</span> <strong>v3.x</strong> — Stability fixes, better blocking logic, faster load performance.</li>
+</br>
+
+      <li><span class="badge improve">IMPROVED</span> <strong>v2.x</strong> — UI improvements, added stats tracking, partial localization support.</li></br>
+      <li><span class="badge new">NEW</span> <strong>v1.0</strong> — First release of Zap! Basic YouTube video blocking with "Zap" button.</li>
+</br>
+
+      <li><span class="badge">INIT</span> <strong>v0.1</strong> — Project created, experimental hide button as ShhhTube.</li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">© 2025 Zap by Dipto Design LLC • <span id="footerVersion">v0.0.0</span></footer>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
